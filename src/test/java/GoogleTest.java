@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -10,10 +11,9 @@ public class GoogleTest {
 
     public void testGoogle () {
         String baseUrl = "https://www.google.com/";
-        String chromeDriverPath="/Users/rasim.muftiev/selenium/chromedriver";
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
-        WebDriver driver = new ChromeDriver();
+
+        WebDriver driver = new HtmlUnitDriver();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get(baseUrl);
